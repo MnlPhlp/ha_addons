@@ -1,7 +1,7 @@
 name: "Seafile"
 description: "Run Seafile in home assistant!"
 image: mnlphlp/ha_seafile
-version: "1.0.2"
+version: "1.0.3"
 slug: "seafile"
 arch:
   - aarch64
@@ -21,3 +21,11 @@ options:
   admin_email: sea@file.com
   admin_pass: seafile
   server_hostname: hassio.local
+schema:
+  db: str
+  db_user: str
+  db_pass: str
+  tz: str
+  admin_email: str
+  admin_pass: str
+  server_hostname: str

@@ -3,7 +3,10 @@
 CONFIG_PATH=/data/options.json
 echo "Data dir:"
 ls /data
+echo options.json
 cat /data/options.json
+echo
+
 export DB_HOST=$(jq --raw-output '.db // "core-mariadb"' $CONFIG_PATH)
 export DB_USER=$(jq --raw-output '.db_user // "seafile"' $CONFIG_PATH)
 export DB_PASSWD=$(jq --raw-output '.db_pass // "seafile"' $CONFIG_PATH)
