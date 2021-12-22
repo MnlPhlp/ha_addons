@@ -1,0 +1,24 @@
+name: "Seafile"
+description: "Run Seafile in home assistant!"
+image: mnlphlp/ha_seafile
+version: "1.0.0"
+slug: "seafile"
+arch:
+  - aarch64
+  - amd64
+webui: http://[HOST]:[PORT:80]
+ports: 
+  '80/tcp': 8080
+ports_description: 
+  '80/tcp': 'seafile ui'
+services:
+  - mysql:need
+options:
+  db: core-mariadb
+  db_user: seafile
+  db_pass: seafile
+  tz: Europe/Berlin
+  admin_email: sea@file.com
+  admin_pass: seafile
+  server_hostname: hassio.local
+init: false
