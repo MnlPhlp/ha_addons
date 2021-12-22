@@ -21,4 +21,3 @@ options:
   admin_email: sea@file.com
   admin_pass: seafile
   server_hostname: hassio.local
-init: false
