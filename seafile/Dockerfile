@@ -14,6 +14,9 @@ COPY scripts/bootstrap.py /scripts/bootstrap.py
 # fix nginx conf
 COPY templates/seafile.nginx.conf.template /templates/seafile.nginx.conf.template
 
+# modify seahub script to drop and recreate tables to prevent error if tables exist
+RUN sed -i 's/^CREATE TABLE `\([^ ]*\)/DROP TABLE IF EXISTS `\1;\n&/' seafile-server-9.0.2/seahub/sql/mysql.sql
+
 # overwrite start script to use config from home assistant
 COPY scripts/haEntrypoint.sh /scripts/haEntrypoint.sh
 CMD ["/scripts/haEntrypoint.sh"]

@@ -1,7 +1,7 @@
 name: "Seafile"
 description: "Run Seafile in home assistant!"
 image: mnlphlp/ha-seafile
-version: "1.0.4"
+version: "1.0.5"
 slug: "seafile"
 arch:
   - aarch64
