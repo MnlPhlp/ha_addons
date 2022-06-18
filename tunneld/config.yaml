@@ -1,0 +1,22 @@
+name: "Tunneld"
+description: "Run an HTTP Tunnel server in home assistant!"
+image: mnlphlp/ha-tunneld
+version: "0.1.0"
+slug: "tunneld"
+arch:
+  - aarch64
+  - amd64
+ports:
+  "80/tcp": 8080
+  "443/tcp": 8181
+ports_description:
+  "80/tcp": "HTTP forwarding"
+  "443/tcp": "HTTPS forwarding"
+options:
+  clients: ""
+  cert_path: ".tunneld/server.crt"
+  key_path: ".tunneld/server.key"
+schema:
+  clients: str
+  cert_path: str
+  key_path: str
