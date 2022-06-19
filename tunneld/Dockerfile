@@ -13,6 +13,8 @@ RUN if [ "$ARCH" == "AMD64" ]; then \
 RUN tar xvf tunnel.tar.gz &&\
     rm -f tunnel.tar.gz tunnel &&\
     mkdir .tunneld
+# install json parser and openssl
+RUN apk add jq openssl
 # setup start script
 COPY scripts/haEntrypoint.sh /scripts/haEntrypoint.sh
 CMD ["/scripts/haEntrypoint.sh"]
