@@ -1,5 +1,0 @@
-{
-  "clients": "",
-  "cert_path": ".tunneld/server.crt",
-  "key_path": ".tunneld/server.key"
-}

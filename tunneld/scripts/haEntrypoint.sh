@@ -17,11 +17,12 @@ echo KEY: $KEY
 if [ ! -f $CERT ]; then
     echo "creating new certificate"
     openssl req -x509  -batch  -nodes -newkey rsa:2048 -sha256 -keyout $KEY -out $CERT
-fi    
-
+fi
 
 if [ $CLIENTS ]; then
-    ./tunneld -tlsCrt $CERT -tlsKey $KEY -clients $CLIENTS
+    CMD="./tunneld -tlsCrt $CERT -tlsKey $KEY -clients $CLIENTS"
 else
-    ./tunneld -tlsCrt $CERT -tlsKey $KEY
+    CMD="./tunneld -tlsCrt $CERT -tlsKey $KEY"
 fi
+echo "Running: $CMD"
+$CMD

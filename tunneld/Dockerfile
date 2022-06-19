@@ -1,12 +1,13 @@
 FROM alpine
 
-ARG TARGETARCH
+ARG ARCH
 
 # download the matching tarball
 RUN if [ "$ARCH" == "AMD64" ]; then \
-        wget https://github.com/mmatczuk/go-http-tunnel/releases/download/2.1/tunnel_linux_arm.tar.gz -O tunnel.tar.gz;\
+        curl -L https://github.com/mmatczuk/go-http-tunnel/releases/download/2.1/tunnel_linux_amd64.tar.gz > tunnel.tar.gz;\
     else \
-        wget https://github.com/mmatczuk/go-http-tunnel/releases/download/2.1/tunnel_linux_amd64.tar.gz -O tunnel.tar.gz;\
+        apk add curl && \
+        curl -L https://github.com/mmatczuk/go-http-tunnel/releases/download/2.1/tunnel_linux_arm.tar.gz > tunnel.tar.gz;\
     fi &&\
     ls
 # extract the server binary
