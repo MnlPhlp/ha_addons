@@ -1,0 +1,21 @@
+name: "Tunneld"
+description: "Run an HTTP Tunnel client in home assistant!"
+image: mnlphlp/ha-tunnel
+version: "0.1.0"
+slug: "tunnel"
+arch:
+  - aarch64
+  - amd64
+options:
+  cert_path: "/data/client.crt"
+  key_path: "/data/client.key"
+  server_addr: "tunnel_host.com:5223"
+  tunnel_config: |
+    webui:
+      proto: http
+      addr: localhost:8080
+      host: tunnel.tunnel_host.com
+schema:
+  cert_path: str
+  key_path: str
+  server: str
