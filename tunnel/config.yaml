@@ -1,4 +1,4 @@
-name: "Tunneld"
+name: "Tunnel"
 description: "Run an HTTP Tunnel client in home assistant!"
 image: mnlphlp/ha-tunnel
 version: "0.1.0"
