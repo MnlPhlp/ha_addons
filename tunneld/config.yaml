@@ -1,7 +1,7 @@
 name: "Tunneld"
 description: "Run an HTTP Tunnel server in home assistant!"
 image: mnlphlp/ha-tunneld
-version: "0.3.0"
+version: "0.4.0"
 slug: "tunneld"
 arch:
   - aarch64
