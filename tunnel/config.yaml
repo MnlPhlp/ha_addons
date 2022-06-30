@@ -1,7 +1,7 @@
 name: "Tunnel"
 description: "Run an HTTP Tunnel client in home assistant!"
 image: mnlphlp/ha-tunnel
-version: "0.1.0"
+version: "0.1.1"
 slug: "tunnel"
 arch:
   - aarch64
@@ -18,4 +18,5 @@ options:
 schema:
   cert_path: str
   key_path: str
-  server: str
+  server_addr: str
+  tunnel_config: str
