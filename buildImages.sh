@@ -2,9 +2,9 @@
 
 for dir in ./*/     # list directories in the form "/tmp/dirname/"
 do
-    tag=$(echo $dir | awk '{ print substr ($0, 3, length($0)-3 ) }')
-    version=$(yq ".version" $dir/config.yaml)
-    oldVersion=$(curl -s https://registry.hub.docker.com/v1/repositories/mnlphlp/ha-$tag/tags | tr -d '\n'   | awk -F: '{print substr( $NF, 3, length($NF)-5) }')
+    tag="mnlphlp/ha-$(echo $dir | awk '{ print substr ($0, 3, length($0)-3 ) }')"
+    version=$(yq --raw-output ".version" $dir/config.yaml)
+    oldVersion=$(curl -s https://registry.hub.docker.com/v2/repositories/$tag/tags | jq --raw-output '.results[0].name')
     echo ""
     echo "############################"
     echo "## dir:         $dir"
@@ -18,6 +18,6 @@ do
     else
         echo "version of $tag changed from $oldVersion to $version"
         echo "creating new docker image"
-        docker buildx build --platform=linux/amd64,linux/arm64 -t mnlphlp/ha-$tag:$version $dir --push
+        docker buildx build --platform=linux/amd64,linux/arm64 -t $tag:$version $dir --push
     fi
 done
