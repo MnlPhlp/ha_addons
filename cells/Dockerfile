@@ -6,8 +6,10 @@ RUN echo "TARGETARCH: $TARGETARCH"
 # download the matching binary
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y wget unzip &&\
     if [ "$TARGETARCH" == "arm64" ]; then \
+    echo arm64 > architecture.log &&\
     wget https://download.pydio.com/latest/cells/release/%7Blatest%7D/linux-arm64/pydio-cells-%7Blatest%7D-linux-arm64.zip -O cells.zip;\
     else \
+    echo amd64 > architecture.log &&\
     wget https://download.pydio.com/latest/cells/release/%7Blatest%7D/linux-amd64/pydio-cells-%7Blatest%7D-linux-amd64.zip -O cells.zip;\
     fi &&\
     unzip cells.zip
