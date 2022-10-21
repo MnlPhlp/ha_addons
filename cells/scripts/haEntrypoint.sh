@@ -11,9 +11,14 @@ fi
 echo $CONFIG_PATH
 cat $CONFIG_PATH
 echo
+no_tls=$(jq --raw-output .no_tls $CONFIG_PATH)
+if [ "$no_tls" = "true" ]; then
+    export CELLS_NO_TLS=1
+else
+    export CELLS_NO_TLS=0
+fi
 
 export DB_HOST=$(jq --raw-output '.db // "core-mariadb"' $CONFIG_PATH)
-export CELLS_NO_TLS=$(jq --raw-output '.no_tls // "1"' $CONFIG_PATH)
 
 echo DB_HOST: $DB_HOST
 echo CELLS_NO_TLS: $CELLS_NO_TLS

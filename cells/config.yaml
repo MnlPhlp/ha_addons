@@ -18,7 +18,7 @@ options:
   db_user: cells
   db_pass: cells
   server_hostname: hassio.local
-  no_tls: 1
+  no_tls: 0
 schema:
   db: str
   db_user: str
