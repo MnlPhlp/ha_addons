@@ -19,9 +19,11 @@ else
 fi
 
 export DB_HOST=$(jq --raw-output '.db // "core-mariadb"' $CONFIG_PATH)
+export CELLS_SITE_EXTERNAL=$(jq --raw-output '.url // "https://homeassistant"' $CONFIG_PATH)
 
 echo DB_HOST: $DB_HOST
 echo CELLS_NO_TLS: $CELLS_NO_TLS
+echo CELLS_SITE_EXTERNAL: $CELLS_SITE_EXTERNAL
 
 ## setup taken from pydio/cells container and adjusted for HA
 ## First check if the system is already installed:

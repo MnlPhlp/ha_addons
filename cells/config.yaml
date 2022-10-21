@@ -1,7 +1,7 @@
 name: "Pydio Cells Home"
 description: "Run Pydio Cells Home as addon in home assistant!"
 image: mnlphlp/ha-cells
-version: "0.1.5"
+version: "0.1.6"
 slug: "cells"
 arch:
   - aarch64
@@ -17,7 +17,7 @@ options:
   db: core-mariadb
   db_user: cells
   db_pass: cells
-  server_hostname: hassio.local
+  url: https://homeassistant
   no_tls: 0
 schema:
   db: str
