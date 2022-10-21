@@ -23,5 +23,5 @@ schema:
   db: str
   db_user: str
   db_pass: str
-  server_hostname: str
+  url: str
   no_tls: bool
