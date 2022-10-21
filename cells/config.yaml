@@ -1,16 +1,16 @@
 name: "Pydio Cells Home"
 description: "Run Pydio Cells Home as addon in home assistant!"
 image: mnlphlp/ha-cells
-version: "0.1.3"
+version: "0.1.4"
 slug: "cells"
 arch:
   - aarch64
   - amd64
 webui: https://[HOST]:[PORT:80]
 ports:
-  "80/tcp": 8080
+  "8080/tcp": 8080
 ports_description:
-  "80/tcp": "cells ui"
+  "8080/tcp": "cells ui"
 services:
   - mysql:need
 options:
