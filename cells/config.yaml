@@ -1,7 +1,7 @@
 name: "Pydio Cells Home"
 description: "Run Pydio Cells Home as addon in home assistant!"
 image: mnlphlp/ha-cells
-version: "0.1.4"
+version: "0.1.5"
 slug: "cells"
 arch:
   - aarch64
