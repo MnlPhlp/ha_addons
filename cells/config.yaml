@@ -6,7 +6,7 @@ slug: "cells"
 arch:
   - aarch64
   - amd64
-webui: https://[HOST]:[PORT:80]
+webui: https://[HOST]:[PORT:8080]
 ports:
   "8080/tcp": 8080
 ports_description:
